@@ -1,8 +1,6 @@
 import pygame
 import random
-#initialize the pygame
 pygame.init()
-#creating screen of height width
 screen=pygame.display.set_mode((800,600))
 background=pygame.image.load('pic1.jpg')
 pygame.display.set_caption('Space invaders')
@@ -11,7 +9,6 @@ try:
  pygame.display.set_icon(icon)
 except: 
   print("cannot load")
-#player
 try:
  playerImg=pygame.image.load('spacecraft.png')
  playerX=350
@@ -27,11 +24,10 @@ enemyX=random.randint(0,800)
 enemyY=random.randint(50,150)
 enemyX_diff=0.3
 enemyY_diff=40
-#ready means u we cant see the bullet on the screen
 bulletImg=pygame.image.load('bullot.jpg')
 bulletX=0
-bulletY=480#spaceship is at 480 so same level
-bulletX_diff=0#bullet is not going to move in x direction
+bulletY=480
+bulletX_diff=0
 bulletY_diff=2
 bullet_state="ready"
 def player(x,y):
@@ -45,7 +41,6 @@ def fire(x,y):
    #do we want the bullet to appear// if we shot the bullet from x and y bullet will shot from little right side not
    #from the centre
    #
-#Game Loop
 running=True
 while running:
    screen.fill((0,0,0))
